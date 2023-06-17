@@ -13,8 +13,8 @@ replicaCount: 1
 ##
 resources:
   requests:
-    memory: 512Mi
-    cpu: 500m
+    memory: 4Gi
+    cpu: 1000m
 
 # upgrade strategy type (e.g. Recreate or RollingUpdate)
 strategyType: Recreate
@@ -85,9 +85,9 @@ extraVolumes: []
 
 minecraftServer:
   # This must be overridden, since we can't accept this for the user.
-  eula: "FALSE"
+  eula: "TRUE"
   # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
-  version: "LATEST"
+  version: "1.20"
   # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA", "CURSEFORGE"
   type: "VANILLA"
   # If type is set to FORGE, this sets the version; this is ignored if forgeInstallerUrl is set
@@ -173,7 +173,7 @@ minecraftServer:
   # Check accounts against Minecraft account service.
   onlineMode: true
   # If you adjust this, you may need to adjust resources.requests above to match.
-  memory: 1024M
+  memory: 2048M
   # General JVM options to be passed to the Minecraft server invocation
   jvmOpts: ""
   # Options like -X that need to proceed general JVM options
